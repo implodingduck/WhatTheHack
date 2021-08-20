@@ -37,3 +37,26 @@ Once the cluster is running:
 
 ## Learning Resources:
 - Be sure to review:  https://docs.microsoft.com/en-us/azure/aks/availability-zones
+
+
+## My Notes:
+Create:
+
+```
+az aks create --location eastus --name wth-introtokube-cluster --node-count 3  --no-ssh-key --resource-group $RG --zones 1 2 3 --enable-managed-identity --attach-acr $ACR
+```
+
+Login:
+```
+az aks install-cli
+```
+```
+az aks get-credentials --name wth-introtokube-cluster --resource-group $RG
+```			
+
+Validate Cluster:
+
+```
+ kubectl cluster-info
+```
+

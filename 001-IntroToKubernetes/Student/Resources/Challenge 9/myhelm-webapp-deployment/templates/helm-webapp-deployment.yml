@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: langfacts-helm
+  labels:
+    k8s-app: langfacts-helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: langfacts-helm
+  template:
+    metadata:
+      labels:
+        k8s-app: langfacts-helm
+    spec:
+      containers:
+      - name: langfacts
+        image: "whatthehackmsft/langfacts:{{.Values.imageversion}}"
+        ports:
+        - containerPort: 80
+          name: ui
+          protocol: TCP

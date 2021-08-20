@@ -26,3 +26,12 @@ In this challenge we'll be setting up all the tools we will need to complete our
 1. You have a bash shell at your disposal (WSL, Mac, Linux or Azure Cloud Shell)
 1. Running `az --version` shows the version of your Azure CLI
 1. Visual Studio Code is installed.
+
+## My Notes
+```
+export rg=rg-wth-001-kubeintro
+az group create --location eastus --resource-group $rg
+```
+```
+az deployment group create --resource-group $rg --template-file docker-build-machine-vm.json --parameters '@docker-build-machine-vm.parameters.json'
+```

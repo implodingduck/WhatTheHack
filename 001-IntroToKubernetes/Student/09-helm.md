@@ -65,3 +65,31 @@ In this challenge you will be installing Helm locally and in your cluster and th
 -	<https://helm.sh/docs/intro/install/>
 -	<https://docs.microsoft.com/en-us/azure/aks/kubernetes-helm>
 -	<https://docs.microsoft.com/en-us/azure/azure-app-configuration/integrate-kubernetes-deployment-helm>
+
+
+## My Notes
+ Create:
+ ```
+ helm create myhelm-webapp-deployment
+ ```
+ Then change all the yaml files to .bak except Chart.yaml
+
+ Copy in the `helm-webapp-deployment.yml` and `helm-webapp-services.yml`
+
+ Use the format:
+ ```
+image: "whatthehackmsft/langfacts:{{.Values.imageversion}}"
+ ```
+
+Some other random commands:
+```
+ helm lint ./myhelm-webapp-deployment/
+ helm install langfacthelm ./myhelm-webapp-deployment --dry-run -n $NAMESPACE
+ helm install langfacthelm ./myhelm-webapp-deployment --dry-run -n $NAMESPACE --set imageversion=v2
+ helm install langfacthelm ./myhelm-webapp-deployment -n $NAMESPACE --set imageversion=v2
+ helm list -n $NAMESPACE
+ helm upgrade --set imageversion=v1 langfacthelm ./myhelm-webapp-deployment/ --namespace $NAMESPACE
+ helm upgrade --set imageversion=v3 langfacthelm ./myhelm-webapp-deployment/ --namespace $NAMESPACE
+ helm upgrade --set imageversion=v4 langfacthelm ./myhelm-webapp-deployment/ --namespace $NAMESPACE
+ helm upgrade --set imageversion=v2 langfacthelm ./myhelm-webapp-deployment/ --namespace $NAMESPACE
+```

@@ -46,7 +46,7 @@ spec:
       volumes:
         - name: azuredisk-db
           persistentVolumeClaim:
-            claimName: <data pvc>
+            claimName: wthintrotokubedatapvc
         - name: azuredisk-configdb
           persistentVolumeClaim:
-            claimName: <config pvc>
+            claimName: wthintrotokubeconfigpvc

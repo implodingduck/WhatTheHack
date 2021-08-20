@@ -21,3 +21,15 @@ In this challenge we will be creating and setting up a new, private, Azure Conta
 1. You have provisioned a new Azure Container Registry
 1. You have deployed your container images to the registry.
 2. You can log into the registry and see all images.
+
+## My Notes:
+```
+export registry=myacrwth
+az acr create -n $registry -g $rg --sku Standard
+```
+```
+az acr login -n $registry -g $rg
+```
+```
+az acr repository list -n $registry -g $rg
+```

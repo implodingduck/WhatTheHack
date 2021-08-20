@@ -47,3 +47,8 @@ _Make sure you review these! (Hint Hint)_
 * [Apply a DNS label to a service](https://docs.microsoft.com/en-us/azure/aks/static-ip#apply-a-dns-label-to-the-service)
 * [Create a basic ingress controller](https://docs.microsoft.com/en-us/azure/aks/ingress-basic)
 * [Ingress controller DNS labels](https://docs.microsoft.com/en-us/azure/aks/ingress-static-ip)
+
+
+## My Notes
+Be sure to add the port for part 1.
+

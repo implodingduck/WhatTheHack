@@ -58,3 +58,12 @@ In this challenge we'll be creating an Azure Linux VM, building, and running the
 - <https://nodejs.org/en/docs/guides/nodejs-docker-webapp/>
 - <https://buddy.works/guides/how-dockerize-node-application>
 - <https://www.cuelogic.com/blog/why-and-how-to-containerize-modern-nodejs-applications>
+
+## My Notes
+```
+export rg=rg-wth-001-kubeintro
+az group create --location eastus --resource-group $rg
+```
+```
+az deployment group create --resource-group $rg --template-file docker-build-machine-vm.json --parameters '@docker-build-machine-vm.parameters.json'
+```
